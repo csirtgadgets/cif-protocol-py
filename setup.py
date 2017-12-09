@@ -27,18 +27,17 @@ if sys.argv[-1] == 'test':
         raise RuntimeError('tests failed')
 
 setup(
-    name="cifsdk",
+    name="cif_protocol",
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
-    description="CIFv3 SDK",
+    description="CIF Protocol",
     long_description="Software Development Kit for CIFv3",
-    url="https://github.com/csirtgadgets/bearded-avenger-sdk-py",
+    url="https://github.com/csirtgadgets/cif-protocol-py",
     license='MPLv2',
     classifiers=[
                "Topic :: System :: Networking",
                "Environment :: Other Environment",
                "Intended Audience :: Developers",
-               "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
                "Programming Language :: Python",
                ],
     keywords=['security'],
@@ -46,22 +45,8 @@ setup(
     author_email="wes@csirtgadgets.org",
     packages=find_packages(),
     install_requires=[
-        'PyYAML>=3.11',
-        'prettytable>=0.7.2',
-        'pyaml>=15.03.1',
-        'pyzmq>=16.0',
-        'requests>=2.6.0',
-        'urllib3>=1.10.2',
-        'csirtg_indicator>=0.0.0b16,<1.0',
         'msgpack-python>=0.4.8,<0.5.0',
         'ujson'
     ],
     scripts=[],
-    entry_points={
-        'console_scripts': [
-            'cif=cifsdk.client:main',
-            'cif-tokens=cifsdk.client.tokens:main',
-            'cif-tail=cifsdk.ztail:main'
-        ]
-    },
 )
